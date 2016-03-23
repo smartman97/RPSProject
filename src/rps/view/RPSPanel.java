@@ -22,6 +22,7 @@ public class RPSPanel extends JPanel
 	private JButton paperButton2;
 	private JButton scissorsButton2;
 	private JButton modeButton;
+	private JButton modeButton2;
 	private JLabel tiesLabel;
 	private JLabel winsLabel;
 	private JLabel losesLabel;
@@ -42,7 +43,8 @@ public class RPSPanel extends JPanel
 		
 		scissorsButton2 = new JButton("Scissors");
 		
-		modeButton = new JButton("Change Mode");
+		modeButton = new JButton("PLayer vs Player");
+		modeButton2 = new JButton("Player vs Computer");
 		
 		tiesLabel = new JLabel("Ties: " + baseController.getTies());
 		winsLabel = new JLabel("Wins: " + baseController.getWins());
@@ -72,6 +74,7 @@ public class RPSPanel extends JPanel
 		this.add(scissorsButton2);
 		
 		this.add(modeButton);
+		this.add(modeButton2);
 		
 		this.add(tiesLabel);
 		this.add(winsLabel);
@@ -120,6 +123,8 @@ public class RPSPanel extends JPanel
 		baseLayout.putConstraint(SpringLayout.NORTH, paperButton2, 0, SpringLayout.NORTH, rockButton2);
 		baseLayout.putConstraint(SpringLayout.EAST, paperButton2, 0, SpringLayout.EAST, paperButton);
 		baseLayout.putConstraint(SpringLayout.WEST, rockButton2, 0, SpringLayout.WEST, rockButton);
+		baseLayout.putConstraint(SpringLayout.NORTH, modeButton2, 0, SpringLayout.NORTH, modeButton);
+		baseLayout.putConstraint(SpringLayout.EAST, modeButton2, 0, SpringLayout.EAST, scissorsButton);
 	}
 	
 	//Adds the action to each of the buttons.
@@ -177,6 +182,28 @@ public class RPSPanel extends JPanel
 				rockButton2.setVisible(true);
 				paperButton2.setVisible(true);
 				scissorsButton2.setVisible(true);
+			}
+		});
+		
+		modeButton2.addActionListener(new ActionListener()
+		{
+			public void actionPerformed(ActionEvent click)
+			{
+				resultsLabel.setText("Player vs Computer");
+				baseController.setWins(0);
+				baseController.setLoses(0);
+				baseController.setTies(0);
+				
+				winsLabel.setText("Wins: " + baseController.getWins());
+				losesLabel.setText("Loses: " + baseController.getLoses());
+				tiesLabel.setText("Ties: " + baseController.getTies());
+				
+				player1Label.setVisible(false);
+				player2Label.setVisible(false);
+				
+				rockButton2.setVisible(false);
+				paperButton2.setVisible(false);
+				scissorsButton2.setVisible(false);
 			}
 		});
 	}
