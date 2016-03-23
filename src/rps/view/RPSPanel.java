@@ -19,7 +19,7 @@ public class RPSPanel extends JPanel
 	private JButton paperButton;
 	private JButton scissorsButton;
 	private JButton modeButton;
-	private JLabel resultsLabel;
+	private JLabel tiesLabel;
 	private JLabel winsLabel;
 	private JLabel losesLabel;
 	
@@ -39,15 +39,15 @@ public class RPSPanel extends JPanel
 		modeButton = new JButton("Change Mode");
 		baseLayout.putConstraint(SpringLayout.WEST, modeButton, 20, SpringLayout.WEST, this);
 		baseLayout.putConstraint(SpringLayout.SOUTH, modeButton, -10, SpringLayout.SOUTH, this);
-		resultsLabel = new JLabel("You picked: " + "Computer Picked: ");
-		baseLayout.putConstraint(SpringLayout.WEST, resultsLabel, 136, SpringLayout.WEST, this);
-		baseLayout.putConstraint(SpringLayout.SOUTH, resultsLabel, -38, SpringLayout.NORTH, rockButton);
+		tiesLabel = new JLabel("Ties: ");
+		baseLayout.putConstraint(SpringLayout.NORTH, tiesLabel, 80, SpringLayout.NORTH, this);
+		baseLayout.putConstraint(SpringLayout.WEST, tiesLabel, 271, SpringLayout.WEST, this);
 		winsLabel = new JLabel("Wins: ");
-		baseLayout.putConstraint(SpringLayout.NORTH, winsLabel, 33, SpringLayout.NORTH, this);
-		baseLayout.putConstraint(SpringLayout.WEST, winsLabel, 0, SpringLayout.WEST, resultsLabel);
+		baseLayout.putConstraint(SpringLayout.NORTH, winsLabel, 0, SpringLayout.NORTH, tiesLabel);
 		losesLabel = new JLabel("Loses: ");
-		baseLayout.putConstraint(SpringLayout.NORTH, losesLabel, 0, SpringLayout.NORTH, winsLabel);
-		baseLayout.putConstraint(SpringLayout.EAST, losesLabel, -154, SpringLayout.EAST, this);
+		baseLayout.putConstraint(SpringLayout.EAST, winsLabel, -47, SpringLayout.WEST, losesLabel);
+		baseLayout.putConstraint(SpringLayout.NORTH, losesLabel, 0, SpringLayout.NORTH, tiesLabel);
+		baseLayout.putConstraint(SpringLayout.EAST, losesLabel, -45, SpringLayout.WEST, tiesLabel);
 		
 		setupPanel();
 		setupLayout();
@@ -61,7 +61,7 @@ public class RPSPanel extends JPanel
 		this.add(paperButton);
 		this.add(scissorsButton);
 		this.add(modeButton);
-		this.add(resultsLabel);
+		this.add(tiesLabel);
 		this.add(winsLabel);
 		this.add(losesLabel);
 		this.setBackground(Color.GREEN);

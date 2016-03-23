@@ -7,6 +7,7 @@ public class RPSController
 {
 	private RPSFrame baseFrame;
 	private Game myGame;
+	private String myWinner;
 	
 	public RPSController()
 	{
@@ -16,6 +17,8 @@ public class RPSController
 	
 	public void start()
 	{
-		
+		myWinner = myGame.getWinner(0);
 	}
+	
+	
 }
