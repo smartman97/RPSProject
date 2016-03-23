@@ -39,4 +39,19 @@ public class RPSController
 	{
 		return myGame.getTies();
 	}
+	
+	public void setWins(int wins)
+	{
+		myGame.setWins(wins);
+	}
+	
+	public void setLoses(int loses)
+	{
+		myGame.setLoses(loses);
+	}
+	
+	public void setTies(int ties)
+	{
+		myGame.setTies(ties);
+	}
 }

@@ -16,10 +16,11 @@ public class RPSFrame extends JFrame
 		setupFrame();
 	}
 	
+	//Creates the frame the holds the panel with all the GUI components.
 	public void setupFrame()
 	{
 		this.setContentPane(basePanel);
-		this.setSize(450, 300);
+		this.setSize(400, 300);
 		this.setTitle("Rock, Paper, Scissors");
 		this.setVisible(true);
 	}

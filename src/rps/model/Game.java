@@ -8,6 +8,7 @@ public class Game
 	public int loses = 0;
 	public int ties = 0;
 	
+	//Generates a random computer choice of three options.
 	public int computerChoice()
 	{
 		Random rand = new Random();
@@ -17,6 +18,7 @@ public class Game
 		return compChoice;
 	}
 	
+	//Compares the users choice with the computers.
 	public String getWinner(int userChoice)
 	{
 		String winner = "";
@@ -60,6 +62,8 @@ public class Game
 		return winner;
 	}
 	
+	//Gets the wines, loses, and ties.
+	
 	public int getWins()
 	{
 		return wins;
@@ -74,4 +78,22 @@ public class Game
 	{
 		return ties;
 	}
+
+	//Sets the wins, loses, and ties.
+	
+	public void setWins(int wins)
+	{
+		this.wins = wins;
+	}
+
+	public void setLoses(int loses)
+	{
+		this.loses = loses;
+	}
+
+	public void setTies(int ties)
+	{
+		this.ties = ties;
+	}
+	
 }
