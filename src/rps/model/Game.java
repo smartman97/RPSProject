@@ -62,6 +62,49 @@ public class Game
 		return winner;
 	}
 	
+	public String getPlayerWinner(int userChoice, int userChoice2)
+	{
+		String winner = "";
+		
+		if(userChoice == userChoice2)
+		{
+			winner = "It's a tie!";
+			ties++;
+		}
+		else if(userChoice == 1 && userChoice2 == 3)
+		{
+			winner = "Rock beats Scissors!";
+			wins++;
+		}
+		else if(userChoice == 2 && userChoice2 == 1)
+		{
+			winner = "Paper beats Rock!";
+			wins++;
+		}
+		else if(userChoice == 3 && userChoice2 == 2)
+		{
+			winner = "Scissors beats Paper!";
+			wins++;
+		}
+		else if(userChoice2 == 1 && userChoice == 3)
+		{
+			winner = "Scissors loses to Rock...";
+			loses++;
+		}
+		else if(userChoice2 == 2 && userChoice == 1)
+		{
+			winner = "Rock loses to Paper...";
+			loses++;
+		}
+		else if(userChoice2 == 3 && userChoice == 2)
+		{
+			winner = "Paper loses to Scissors...";
+			loses++;
+		}
+		
+		return winner;
+	}
+	
 	//Gets the wines, loses, and ties.
 	
 	public int getWins()
