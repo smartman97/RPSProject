@@ -69,4 +69,9 @@ public class Game
 	{
 		return loses;
 	}
+	
+	public int getTies()
+	{
+		return ties;
+	}
 }
